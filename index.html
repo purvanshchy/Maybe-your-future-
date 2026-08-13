@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Future Awaits ✨</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Georgia,serif;color:white;display:flex;align-items:center;justify-content:center;text-align:center;background:#071b16;overflow:hidden}
+body:before{content:"";position:fixed;inset:0;background:
+linear-gradient(rgba(3,25,18,.15),rgba(2,12,10,.72)),
+url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=90") center/cover no-repeat;
+z-index:-2}
+body:after{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 40%,transparent 0,rgba(0,0,0,.48) 100%);z-index:-1}
+.card{width:min(90%,560px);padding:48px 28px;border:1px solid rgba(255,255,255,.35);border-radius:28px;background:rgba(10,25,20,.35);backdrop-filter:blur(8px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.moon{font-size:42px;margin-bottom:12px}
+h1{font-size:38px;margin:0 0 14px;text-shadow:0 3px 15px #000}
+p{font-size:18px;line-height:1.6;margin:10px 0 30px}
+.buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+button{font:inherit;font-family:Arial,sans-serif;font-weight:bold;border:0;border-radius:999px;padding:15px 30px;cursor:pointer;transition:.2s}
+.yes{background:#fff;color:#17352a}.no{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.5)}
+button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+#message{display:none;font-size:21px;margin-top:22px}
+audio{display:none}
+.small{font:12px Arial,sans-serif;opacity:.65;margin-top:28px}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="moon">🔮</div>
+<h1>Want to See Your Future?</h1>
+<p>A mysterious message from the universe is waiting for you.<br>Do you dare to discover what lies ahead?</p>
+<div class="buttons">
+<button class="yes" id="yes">✨ YES, SHOW ME</button>
+<button class="no" id="no">NO, THANKS</button>
+</div>
+<div id="message"></div>
+<audio id="audio" src="future_prediction_audio.mp3" preload="auto"></audio>
+<div class="small">A little fictional surprise ✨</div>
+</main>
+<script>
+const audio=document.getElementById('audio');
+const msg=document.getElementById('message');
+document.getElementById('yes').onclick=async()=>{
+  try{await audio.play();}catch(e){}
+  msg.style.display='block';
+  msg.textContent='✨ Your future is being revealed...';
+};
+document.getElementById('no').onclick=()=>{
+  msg.style.display='block';
+  msg.textContent='Thanks for visiting. The universe will keep its secrets. 🌿';
+};
+</script>
+</body>
+</html>
